@@ -113,7 +113,7 @@ public class policeusers {
 			this.registered = registered;
 		}
 		
-		{
+		
 			
 		}
 	

@@ -12,7 +12,7 @@ import com.claim.police360.model.users;
 
 public interface EventRepository  extends JpaRepository<events, Long> { 
 	
-String search="SELECT e FROM events p WHERE e.ename =:ename";
+String search="SELECT e FROM events e WHERE e.ename =:ename";
 	
 	@Query(search)
 	Page<projects> filter(@Param("ename") String type, Pageable pageable);

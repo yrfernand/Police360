@@ -21,7 +21,7 @@ public class projects {
 	private String participants;
 	private String dateCreated;
 	private String dateCompleted;
-	
+	private String description;
 	
 		
 		public Long getId() {
@@ -65,6 +65,12 @@ public class projects {
 	}
 	public void setDateCompleted(String dateCompleted) {
 		this.dateCompleted = dateCompleted;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 		
 		

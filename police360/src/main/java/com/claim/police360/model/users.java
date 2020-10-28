@@ -10,6 +10,8 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 
+
+
 @Table(name="users")
 @Entity
 public class users {
@@ -23,9 +25,22 @@ public class users {
 		private String fname2;
 		private String lname2;
 		private String email2;
+		private String username2;
 		private String password2;
 		@Transient
 		private String location2;
+		private String registered;
+		private String role;
+		
+		
+		public String getUsername2() {
+			return username2;
+		}
+
+		public void setUsername2(String username2) {
+			this.username2 = username2;
+		}
+
 		private String dept2;
 		public Long getId() {
 			return id;
@@ -84,21 +99,58 @@ public class users {
 		}
 
 		public String getRegistered2() {
-			return registered2;
+			return registered;
 		}
 
 		public void setRegistered2(String registered2) {
-			this.registered2 = registered2;
+			this.registered = registered2;
 		}
 
 		private String registered2;
 		
 		{
+		}
 
-}
+		public String getRegistered() {
+			return registered;
+		}
 
+		public void setRegistered(String registered) {
+			this.registered = registered;
+		}
+
+		public String getRole() {
+			return role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
 		
+			@Override
+			public String toString() {
+				return "Accounts [id=" + id + ", fname=" + fname2 + ", lname=" + lname2 + ", password=" + password2 + ", email="
+						+ email2 + ", password2=" + password2 + ", role=" + role + ", roles=" + role + "]";
+			}
+
+			public void setAddressess(Addressess addressess) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public void setRoles(HashSet<Role> hashSet) {
+				// TODO Auto-generated method stub
+				
+			}
 
 		
 			
-		}
+}
+					
+				
+				
+		
+			
+			
+
+		

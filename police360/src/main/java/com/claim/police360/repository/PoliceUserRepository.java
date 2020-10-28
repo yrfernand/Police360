@@ -31,7 +31,7 @@ public interface PoliceUserRepository  extends JpaRepository<policeusers, Long> 
 	@Query(searchusers)
 	Page<policeusers> search(@Param("name") String name, Pageable pageable);
 	
-	@Query("FROM policeuserss WHERE lname=?1 AND email=?2")
+	@Query("FROM policeusers WHERE lname=?1 AND email=?2")
 	List<policeusers> findByName(String lname, String email);
 		
 	@Query(search)
@@ -39,6 +39,6 @@ public interface PoliceUserRepository  extends JpaRepository<policeusers, Long> 
 
 
 
-}
+
 
 }

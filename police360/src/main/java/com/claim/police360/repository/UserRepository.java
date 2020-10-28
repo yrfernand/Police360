@@ -14,24 +14,29 @@ import com.claim.police360.model.users;
 
 public interface UserRepository  extends JpaRepository<users, Long> { 
 	
-	String search="SELECT u FROM users u WHERE u.email =:email AND " +
-	  		  "u.fname LIKE (CONCAT('%',:name, '%')) OR u.lname =:name";
+	String search="SELECT u FROM users u WHERE u.email2 =:email AND " +
+	  		  "u.fname2 LIKE (CONCAT('%',:name, '%')) OR u.lname2 =:name";
 	
-	String searchusers="SELECT u FROM users u WHERE u.email =:name OR " +
-	  		  "u.fname LIKE (CONCAT('%',:name, '%')) OR u.lname LIKE (CONCAT('%',:name, '%'))";
+	/*
+	 * String searchusers="SELECT u FROM users u WHERE u.email =:name OR " +
+	 * "u.fname LIKE (CONCAT('%',:name, '%')) OR u.lname LIKE (CONCAT('%',:name, '%'))"
+	 * ;
+	 */
 	
-	Optional<users> findByEmail(String email);
+	Optional<users> findByEmail2(String email);
 	
-	@Query("FROM users u WHERE u.email=?1 AND u.password=?2")
+	@Query("FROM users u WHERE u.email2=?1 AND u.password2=?2")
 	Optional<users> login(String email, String password);
 	
-	@Query("FROM users WHERE lname=?1 OR fname=?1 OR email=?1")
+	@Query("FROM users WHERE lname2=?1 OR fname2=?1 OR email2=?1")
 	List<users> findByName(String name);
 	
-	@Query(searchusers)
-	Page<users> search(@Param("name") String name, Pageable pageable);
+	/*
+	 * @Query(searchusers) Page<users> search(@Param("name") String name, Pageable
+	 * pageable);
+	 */
 	
-	@Query("FROM users WHERE lname=?1 AND email=?2")
+	@Query("FROM users WHERE lname2=?1 AND email2=?2")
 	List<users> findByName(String lname, String email);
 		
 	@Query(search)
